@@ -1,0 +1,47 @@
+﻿{% extends "base.html" %}
+{% block title %}主页{% endblock %}
+
+{% block content %}
+<div style="text-align:center">
+    <img src="/static/Logo.png"/>
+    <br />
+    <br />
+    <br />
+    <br />
+    <table align='center'>
+
+        <tr>
+            <td colspan="2">
+                <form  action='/appointment/'>
+                    <p> <input type='submit' style="width:400px;height:80px" value='教室推荐' /> </p>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form  action='/showdetails1/' method="get" name="1" style="background-image:url(/static/lead.jpg)">
+                    <p> <input name="1" type='submit' style="width:200px;height:80px;" value='正心概况展示' /> </p>
+                </form>
+            </td>
+            <td>
+                <form action='/showdetails2/' method="get" name="2" style="background-image:url(/static/lead.jpg)">
+                    <p> <input name="2" type='submit' style="width:200px;height:80px;" value='诚意概况展示' /> </p>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form action='/showdetails3/' method="get" name="3" style="background-image:url(/static/lead.jpg)">
+                    <p> <input name="3" type='submit' style="width:200px;height:80px;" value='格物概况展示' /> </p>
+                </form>
+            </td>
+            <td>
+                <form action='/showdetails4/' method="get" name="4" style="background-image:url(/static/lead.jpg)">
+                    <p> <input name="4" type='submit' style="width:200px;height:80px;" value='致知概况展示' /> </p>
+                </form>
+            </td>
+        </tr>
+
+    </table>
+</div>
+{% endblock %}

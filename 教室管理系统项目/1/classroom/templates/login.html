@@ -1,0 +1,52 @@
+﻿{% extends "base.html" %}
+{% block title %}登陆/注册{% endblock %}
+
+{% block content %}
+<div style="text-align:center">
+    <ul style="color:red;">
+        {% for error in errors %}
+        <li>{{error}}</li>
+        {% endfor %}
+    </ul>
+</div>
+<div style=" text-align:center">
+    <form action="" method="post">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <img src="/static/Logo.png" />
+        <br />
+        <br />
+        <br />
+        <table align="center">
+            <tr>
+                <th>用户名</th>
+                <td><input type="text"  name="name"/></td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <th>密码</th>
+                <td><input type="password" name="password"/></td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+         <a style="margin:40px"  href="sign/">注册</a>
+          <input type="submit" value="登陆" />
+      
+    </form>
+</div>
+{% endblock %}
