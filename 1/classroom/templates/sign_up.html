@@ -1,0 +1,116 @@
+﻿{% extends "base.html"%}
+{% block title %}注册{%endblock%}
+{%block content%}
+	<div class="contact" >
+        <style type="text/css">
+    body {
+        font: 14px/28px "微软雅黑";
+    }
+
+    .contact *:focus {
+        outline: none;
+    }
+
+    .contact {
+        width: 700px;
+        height: auto;
+        background: #f6f6f6;
+        margin: 40px auto;
+        padding: 10px;
+    }
+
+        .contact ul {
+            width: 650px;
+            margin: 0 auto;
+        }
+
+            .contact ul li {
+                border-bottom: 1px solid #dfdfdf;
+                list-style: none;
+                padding: 12px;
+            }
+
+                .contact ul li label {
+                    width: 120px;
+                    display: inline-block;
+                    float: left;
+                }
+
+                .contact ul li input[type=text], .contact ul li input[type=password] {
+                    width: 220px;
+                    height: 25px;
+                    border: 1px solid #aaa;
+                    padding: 3px 8px;
+                    border-radius: 5px;
+                }
+
+                .contact ul li input:focus {
+                    border-color: #c00;
+                }
+
+                .contact ul li input[type=text] {
+                    transition: padding .25s;
+                    -o-transition: padding .25s;
+                    -moz-transition: padding .25s;
+                    -webkit-transition: padding .25s;
+                }
+
+                .contact ul li input[type=password] {
+                    transition: padding .25s;
+                    -o-transition: padding .25s;
+                    -moz-transition: padding .25s;
+                    -webkit-transition: padding .25s;
+                }
+
+                .contact ul li input:focus {
+                    padding-right: 70px;
+                }
+
+    .btn {
+        position: relative;
+        left: 300px;
+    }
+
+    .tips {
+        color: rgba(0, 0, 0, 0.5);
+        padding-left: 10px;
+    }
+
+    .tips_true, .tips_false {
+        padding-left: 10px;
+    }
+
+    .tips_true {
+        color: green;
+    }
+
+    .tips_false {
+        color: red;
+    }
+</style>
+		<form action ="" name="form1" method="post">
+            
+			<ul>
+				<li>
+					<label>姓名：</label>
+					<input type="text" name="name" placeholder="请输入用户名"   required/>
+				</li>
+                <li>
+                    <label>学号：</label>
+                    <input type="text" name="sid" placeholder="请输入学号"  required />
+                </li>
+				<li>
+					<label>电子邮箱：</label>
+					<input type="email" name="email" placeholder="请输入你的邮箱" required/>
+				</li>
+                <li>
+                    <label>密码：</label>
+                    <input type="password" name="password" placeholder="请输入你的密码" required />
+                </li>
+			</ul>
+			<b class="btn"><input type="submit" value="提交"/>
+			<input type="reset" value="取消"/></b>
+		</form>
+	</div>
+{%endblock%}
+

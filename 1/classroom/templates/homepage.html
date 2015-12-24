@@ -1,0 +1,35 @@
+﻿{% extends "base.html" %}
+{% block title %}主页{% endblock %}
+
+{% block content %}
+<div>
+    <img src="/static/map.png" ismap="ismap" alt="Picture of book" width="1500" height="700" border="0" usemap="#planetmap">
+    <map name="planetmap" id="planetmap">
+        <area shape="rect"
+              coords="880,500,1100,680"
+              href="/showdetails3/"
+              onfocus="this.blur()"
+              target="_blank"
+              alt="格物楼" />
+        <area shape="rect"
+              coords="1110,300,1350,550"
+              href="/showdetails2/"
+              onfocus="this.blur()"
+              target="_blank"
+              alt="管理楼" />
+        <area shape="rect"
+              coords="450,10,800,300"
+              href="/showdetails1/"
+              onfocus="this.blur()"
+              target="_blank"
+              alt="正心楼" />
+
+        <area shape="rect"
+              coords="15,405,160,530"
+              href="/showdetails4/"
+              onfocus="this.blur()"
+              target="_blank"
+              alt="致知楼" />
+    </map>
+</div>
+{% endblock %}

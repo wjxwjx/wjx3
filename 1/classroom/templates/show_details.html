@@ -1,0 +1,63 @@
+﻿{% extends "base.html" %}
+{% block title %}展示{% endblock %}
+
+{% block content %}
+<div>
+    <form method="get" action=""> 
+        <label for="week">选择日期</label>
+            <select name="week" id="week">
+                <option value="" selected="selected">---------</option>
+                <option value="星期一">星期一</option>
+                <option value="星期二">星期二</option>
+                <option value="星期三">星期三</option>
+                <option value="星期四">星期四</option>
+                <option value="星期五">星期五</option>
+                <option value="星期六">星期六</option>
+                <option value="星期天">星期天</option>
+            </select>
+        <label for="number">选择时间</label>
+        <select name="number" id="number">
+            <option value="" selected="selected">----------------------------</option>
+            <option value="第一节">1-2（8：00——9：45）</option>
+            <option value="第二节">3-4（10：00——11：45）</option>
+            <option value="第三节">5-6（13：45——15：30）</option>
+            <option value="第四节">6-7（15：45——17：30）</option>
+            <option value="第五节">8-9（18：30——20：15）</option>
+        </select>                  
+        <button type="submit">选择</button>
+    </form>
+</div>
+<div style="text-align:center">
+    <br />
+    <br />
+    <h1>{{Bname}}</h1>
+    <br />
+    <br />
+    <form method="get" action="">
+        <table border="0"  cellspacing="10"  align="center" style="font-size:x-large;" id="show">
+            <tbody>
+                {% for x in classrooms %}
+                <tr>
+                    <th><a> {{ x.0.floor.name}}</a></th>
+                    {% for classroom in x%}
+                    <td>
+                        {% if classroom.flag %}   
+                        <a  style="background-color:#00EC00" href="?name1={{classroom.name}}&week1={{classroom.week}}&number1={{classroom.number}}">{{classroom.name}}({{classroom.appointment}}/{{classroom.seating_num}})</a>
+                        {% elif classroom.appointment > 25 and classroom.appointment <= 50 %}
+                        <a style="background-color:lightpink" href="?name1={{classroom.name}}&week1={{classroom.week}}&number1={{classroom.number}}">{{classroom.name}}({{classroom.appointment}}/{{classroom.seating_num}})</a>
+                        {% elif classroom.appointment > 50 and classroom.appointment <= 75%}
+                        <a style="background-color:darkorange" href="?name1={{classroom.name}}&week1={{classroom.week}}&number1={{classroom.number}}">{{classroom.name}}({{classroom.appointment}}/{{classroom.seating_num}})</a>
+                        {% elif classroom.appointment > 75 %}
+                        <a style="background-color:red" href="?name1={{classroom.name}}&week1={{classroom.week}}&number1={{classroom.number}}">{{classroom.name}}({{classroom.appointment}}/{{classroom.seating_num}})</a>
+                        {%else%}
+                        <a  href="?name1={{classroom.name}}&week1={{classroom.week}}&number1={{classroom.number}}">{{classroom.name}}({{classroom.appointment}}/{{classroom.seating_num}})</a>
+                        {% endif %}
+                    </td>
+                    {% endfor%}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </form>
+</div>
+{% endblock %}

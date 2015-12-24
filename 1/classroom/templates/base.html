@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <div  style="background:border-box; height:170px; background-image:url(/static/header.jpg);background-size:100%">
+        <div style="text-align:left" class="nav">
+            <nav>
+                <style>
+                       .nav * {
+                            margin: 0;
+                            padding: 0;
+                        }
+                       .nav .clear:after {
+                            clear: both;
+                            content: ".";
+                            display: block;
+                            height: 0;
+                            visibility: hidden;
+                        }
+
+                        .nav nav {
+                            display: inline-block;
+                            border: 1px solid #505255;
+                            border-bottom: 1px solid #282C2F;
+                            -moz-border-radius: 5px;
+                            -webkit-border-radius: 5px;
+                            margin-top:120px;
+                            -webkit-box-shadow: 1px 1px 3px #292929;
+                            -moz-box-shadow: 1px 1px 3px #292929
+                        }
+
+                       .nav li {
+                            list-style: none;
+                            float: left;
+                            border-right: 1px solid #2E3235;
+                            position: relative; /*background: -moz-linear-gradient(top, #fff, #555D5F 2% ,#555D5F  50%,#3E4245 100%);
+                    background: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), color-stop(2%, #555D5F), color-stop(50%, #555D5F),to(#3E4245));*/
+                            background: #555D5F;
+                        }
+
+                        .nav    li:hover { /*background: -moz-linear-gradient(top, #fff, #3E4245 2% ,#555D5F  80%,#555D5F 100%);
+                    background: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), color-stop(2%, #3E4245), color-stop(80%, #3E4245),to(#555D5F));*/
+                                background: #3E4245;
+                                -moz-transition: background 1s ease-out;
+                                -webkit-transition: background 1s ease-out;
+                            }
+
+                         .nav   li a {
+                                display: block;
+                                height: 40px;
+                                line-height: 40px;
+                                padding: 0 30px;
+                                font-size: 12px;
+                                color: #fff;
+                                text-shadow: 0px -1px 0px #000;
+                                text-decoration: none;
+                                white-space: nowrap;
+                                border-left: 1px solid #999E9F;
+                                border-top: 1px solid #999E9F;
+                                -moz-border-top-left-radius: 2px;
+                                -webkit-border-top-left-radius: 2px;
+                                z-index: 100;
+                            }
+
+                          .nav  li > a {
+                                position: relative;
+                            }
+                      .nav  dl {
+                            position: absolute;
+                            display: block;
+                            top: 40px;
+                            left: -25px;
+                            width: 165px;
+                            background: #222222;
+                            
+                            -moz-border-radius: 5px;
+                            -webkit-border-radius: 5px;
+                            -webkit-box-shadow: 1px 1px 3px #292929;
+                            -moz-box-shadow: 1px 1px 3px #292929;
+                            z-index: 10;
+                        }
+
+                      .nav  li:hover dl {
+                            top: 50px;
+                            display: block;
+                            width: 145px;
+                            padding: 10px;
+                        }
+
+                    .nav    dl a {
+                            background: transparent;
+                            border: 0 none;
+                            -moz-border-radius: 5px;
+                            -webkit-border-radius: 5px;
+                            -moz-transition: background 0.5s ease-out;
+                            -webkit-transition: background 0.5s ease-out;
+                            z-index: 50;
+                        }
+
+                       .nav     dl a:hover {
+                                color: #FFF;
+                                background: #999E9F;
+                                -moz-transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+                                -webkit-transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+                            }
+
+                    .nav    dd {
+                            margin-top: -40px;
+                            opacity: 0;
+                            width: 145px;
+                            -webkit-transition-property: all; /*-webkit-transition-timing-function: cubic-bezier(5,0,5,0);*/
+                            -moz-transition-property: all; /*-moz-transition-timing-function: cubic-bezier(5,0,5,0);*/ /*-webkit-transition-delay:5s;
+                    -moz-transition-delay:5s;*/
+                        }
+
+                     .nav   li:hover dd {
+                            margin-top: 0;
+                            opacity: 1;
+                        }
+
+                     .nav   li dd:nth-child(1) {
+                            -webkit-transition-duration: 0.1s;
+                            -moz-transition-duration: 0.1s;
+                        }
+
+                     .nav   li dd:nth-child(2) {
+                            -webkit-transition-duration: 0.2s;
+                            -moz-transition-duration: 0.2s;
+                        }
+
+                    .nav    li dd:nth-child(3) {
+                            -webkit-transition-duration: 0.3s;
+                            -moz-transition-duration: 0.3s;
+                        }
+
+                    .nav    li dd:nth-child(4) {
+                            -webkit-transition-duration: 0.4s;
+                            -moz-transition-duration: 0.4s;
+                        }
+
+                    .nav    dt {
+                            display: none;
+                            margin-top: -25px;
+                            padding-top: 15px;
+                            height: 10px;
+                        }
+
+                    .nav    li:hover dt {
+                            display: block;
+                        }
+
+                   .nav     .Darrow {
+                            float: right;
+                            margin: 18px 10px 0 0;
+                            border-width: 5px;
+                            border-color: #FFF transparent transparent transparent;
+                            border-style: solid;
+                            width: 0;
+                            height: 0;
+                            line-height: 0;
+                            overflow: hidden;
+                            cursor: pointer;
+                            text-shadow: 0px -1px 0px #000;
+                            -webkit-box-shadow: 0px -1px 0px #000;
+                            -moz-box-shadow: 0px -1px 0px #000;
+                        }
+
+                   .nav     .arrow {
+                            margin: 0 auto;
+                            margin-top: -5px;
+                            display: block;
+                            width: 10px;
+                            height: 10px;
+                            background: #222222;
+                            -webkit-transform: rotate(45deg);
+                            -moz-transform: rotate(45deg);
+                        }
+                </style>
+
+                <ul class="clear">
+                    <li class="first"><a href="/home/">首页</a></li>
+                    <li><a href="/show/">个人信息</a></li>
+                    <li><a href="/showp/">预约查询</a></li>
+                    <li><a href="">教室推荐</a></li>
+                </ul>
+            </nav> 
+        </div>
+        <p style="text-align:end;margin:7px 20px auto auto;font-family:LiSu;font-size:large">
+            <a style="text-align:right">{{username}}</a>
+            <a href="/logout/">/注销登陆</a>
+        </p>
+    </div>
+        {% block content %}{% endblock %}     
+        {% block footer %} 
+        
+        {% endblock %}
+</body>
+</html>

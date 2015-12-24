@@ -1,0 +1,86 @@
+﻿{% extends "base.html"%}
+{% block title %}预约查询{%endblock%}
+
+{%block content%}
+<div>
+    <div class="contact">
+        <style type="text/css">
+            .contact *:focus {
+                outline: none;
+            }
+
+            .contact {
+                width: 700px;
+                height: auto;
+                background: #f6f6f6;
+                margin: 40px auto;
+                padding: 10px;
+            }
+
+                .contact ul {
+                    width: 650px;
+                    margin: 0 auto;
+                }
+
+                    .contact ul li {
+                        border-bottom: 1px solid #dfdfdf;
+                        list-style: none;
+                        padding: 12px;
+                    }
+
+                        .contact ul li label {
+                            width: 120px;
+                            display: inline-block;
+                            float: left;
+                        }
+
+                        .contact ul li input[type=text], .contact ul li input[type=password] {
+                            width: 220px;
+                            height: 25px;
+                            border: 1px solid #aaa;
+                            padding: 3px 8px;
+                            border-radius: 5px;
+                        }
+
+                        .contact ul li input:focus {
+                            border-color: #c00;
+                        }
+
+                        .contact ul li input[type=text] {
+                            transition: padding .25s;
+                            -o-transition: padding .25s;
+                            -moz-transition: padding .25s;
+                            -webkit-transition: padding .25s;
+                        }
+
+                        .contact ul li input[type=password] {
+                            transition: padding .25s;
+                            -o-transition: padding .25s;
+                            -moz-transition: padding .25s;
+                            -webkit-transition: padding .25s;
+                        }
+
+                        .contact ul li input:focus {
+                            padding-right: 70px;
+                        }
+        </style>
+        <table border="0"  cellpadding="25" align="center" style="font-size:x-large;" id="show">
+            <tbody>
+                <tr>
+                    <th>预约教室</th>
+                    <th>预约时间</th>
+                </tr>
+                {% for x in classrooms %}
+                <tr>
+                    <td>{{x.floor}}{{x.name}}</td>   
+                    <td>{{x.week}}{{x.number}}</td>
+                    <td>
+                            <a href="?floor={{x.floor.name}}&name={{x.name}}&week={{x.week}}&number={{x.number}}">删除预约</a>
+                    </td>
+                </tr>
+                {% endfor%}
+             </tbody>
+        </table>
+    </div>
+</div>
+{%endblock%}

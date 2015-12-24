@@ -1,0 +1,44 @@
+﻿{% extends "base.html" %}
+
+{% block title %}用户信息{% endblock %}
+
+{% block content %}
+{% if errors %}
+
+<div style="text-align:center">
+    <ul style="color:red;">
+        {% for error in errors %}
+        <li>{{error}}</li>
+        {% endfor %}
+    </ul>
+</div>
+    {% endif %}
+    <form action="" method="post">
+        <div style="text-align:center">
+            <img src="/static/Logo.png" />
+            <h1 style="font-family:LiSu">用户注册</h1>
+        </div>
+            <table border="0" align="center">
+                <tr>
+                    <th>用户名</th>
+                    <td align="center"><input name="name" /></td>
+                </tr>
+                <tr>
+                    <th>学号</th>
+                    <td align="center"><input name="sid" /></td>
+                </tr>
+                <tr>
+                    <th>邮箱</th>
+                    <td align="center"><input type="email" name="email" /></td>
+                </tr>
+                <tr>
+                    <th>密码</th>
+                    <td align="center"><input name="password" type="password" /></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td align="right"><input type="submit" value="注册" /></td>
+                </tr>
+            </table>
+</form>
+{% endblock %}
